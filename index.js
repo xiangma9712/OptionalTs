@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Optional = /** @class */ (function () {
     function Optional() {
     }
@@ -81,4 +80,4 @@ var Optional = /** @class */ (function () {
     };
     return Optional;
 }());
-exports.default = Optional;
+module.exports = Optional;
