@@ -1,0 +1,29 @@
+{
+  "name": "optional.ts",
+  "version": "1.0.0",
+  "description": "Bring Optional class to TypeScript which has same interface to that of Java",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "tsc" : "./node_modules/.bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiangma9712/OptionalTs.git"
+  },
+  "keywords": [
+    "Optional",
+    "class",
+    "java-like",
+    "interface"
+  ],
+  "author": "Shoma Koike <shomakoike0909+npm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiangma9712/OptionalTs/issues"
+  },
+  "homepage": "https://github.com/xiangma9712/OptionalTs#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
