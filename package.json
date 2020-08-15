@@ -1,11 +1,11 @@
 {
-  "name": "optional.ts",
+  "name": "@xiangma9712/optional.ts",
   "version": "1.0.0",
   "description": "Bring Optional class to TypeScript which has same interface to that of Java",
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "tsc" : "./node_modules/.bin/tsc"
+    "tsc": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/xiangma9712/OptionalTs#readme",
   "devDependencies": {
+    "@types/node": "^14.0.27",
     "typescript": "^3.9.7"
   }
 }

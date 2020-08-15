@@ -88,4 +88,4 @@ class Optional<T>{
     }
 }
 
-export default Optional;
+module.exports = Optional;
