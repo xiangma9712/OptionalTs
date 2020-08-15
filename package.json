@@ -1,8 +1,8 @@
 {
   "name": "@xiangma9712/optional.ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bring Optional class to TypeScript which has same interface to that of Java",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
