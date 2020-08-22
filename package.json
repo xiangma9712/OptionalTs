@@ -4,7 +4,7 @@
   "description": "Bring Optional class to TypeScript which has same interface to that of Java",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require ts-node/register --watch-extensions ts \"test/**/*.ts\"",
     "build": "tsc",
     "prepare": "npm run build"
   },
@@ -25,7 +25,12 @@
   },
   "homepage": "https://github.com/xiangma9712/OptionalTs#readme",
   "devDependencies": {
-    "typescript": "^3.9.7",
-    "@types/node": "^14.0.27"
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.0.27",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^3.9.7"
   }
 }
