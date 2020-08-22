@@ -1,6 +1,6 @@
 import { describe, it } from "mocha";
 import Optional from "../lib/optional";
-import { expect, assert } from "chai"
+import { expect } from "chai"
 
 describe('test of constructors', () => {
   it('of constructs Optional with value', () => {
