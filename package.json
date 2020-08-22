@@ -1,6 +1,6 @@
 {
   "name": "@xiangma9712/optional.ts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Bring Optional class to TypeScript which has same interface to that of Java",
   "main": "dist/index.js",
   "types": "index.ts",
