@@ -1,6 +1,6 @@
 # Optional.ts
 
-Optional.ts emulate [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) class of Java lang. It brings null-safety to TypeScript.
+Optional.ts emulate [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html) class of Java lang.
 
 ## Instllation
 
