@@ -1,4 +1,4 @@
-import { nonNullArg } from "./customTypes" 
+import { predicate, consumer, supplier, mapper } from "./customTypes";
 
 export default class Optional<T>{
     private value?: T;
@@ -14,16 +14,16 @@ export default class Optional<T>{
         return this.hasValue;
     }
 
-    public ifPresent(fn: Function): void{
+    public ifPresent(fn: consumer<T>): any{
         if(!this.hasValue){
             return;
         }
-        fn(this);
+        return fn(this.value);
     }
 
-    public filter(fn: Function): Optional<T>{
+    public filter(fn: predicate<T>): Optional<T>{
         if(this.isEmpty()){
-            return this;
+            return Optional.empty<T>();
         }
         if(fn(this.value)){
             return this;
@@ -31,15 +31,19 @@ export default class Optional<T>{
         return new Optional();
     }
 
-    public map(fn: Function){
+    public flatMap<U>(fn: (arg: T) => Optional<U>): Optional<U>{
+        if(this.value === null || this.value === undefined){
+            return Optional.empty<U>();
+        }
+        return fn(this.value);
+    }
+
+    public map<U>(fn: mapper<T, U>): Optional<U>{
         if(this.isEmpty()){
-            return this;
+            return Optional.empty<U>();
         }
         const maped = fn(this.value);
-        if(maped === null || maped === undefined){
-            return new Optional;
-        }
-        return Optional.of(maped);
+        return Optional.ofNullable(maped);
     }
 
     public orElse(other: T): T{
@@ -49,15 +53,15 @@ export default class Optional<T>{
         return this.value;
     }
 
-    public orElseGet(fn: Function){
-        if(this.isEmpty()){
+    public orElseGet(fn: supplier<T>): T{
+        if(this.value === null || this.value === undefined){
             return fn();
         }
         return this.value;
     }
 
-    public orElseThrow(message: string){
-        if(this.isEmpty()){
+    public orElseThrow(message: string): T{
+        if(this.value === null || this.value === undefined){
             throw message;
         }
         return this.value;
@@ -70,20 +74,20 @@ export default class Optional<T>{
         return this.value;
     }
 
-    static empty(){
+    static empty<T>(): Optional<T>{
         return new Optional();
     }
 
-    static of(value: nonNullArg){
-        const n = new Optional();
+    static of<T>(value: NonNullable<T>): Optional<T>{
+        const n = new Optional<T>();
         n.value = value;
         return n;
     }
 
-    static ofNullable(value: any){
+    static ofNullable<T>(value: T): Optional<T>{
         if(value === null || value === undefined){
-            return this.empty();
+            return this.empty<T>();
         }
-        return this.of(value);
+        return this.of(<NonNullable<T>>value);
     }
 }
