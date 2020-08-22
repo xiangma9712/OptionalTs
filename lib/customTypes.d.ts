@@ -1,0 +1,1 @@
+export type nonNullArg = Exclude<any, null | undefined>;
